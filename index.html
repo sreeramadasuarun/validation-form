@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <form class="container">
+    <form class="form" id="form">
       <h1 class="center">Validation Form</h1>
 
       <div class="form-container">
@@ -23,7 +23,6 @@
           name="name"
           id="name"
           placeholder="Enter your Name"
-          required
           class="text-box"
         />
         <small class="error-message">error-message</small>
@@ -36,7 +35,6 @@
           name="email"
           id="email"
           placeholder="Enter your Email"
-          required
           class="text-box"
         />
         <small class="error-message">error-message</small>
@@ -49,7 +47,6 @@
           name="password"
           id="password"
           placeholder="Enter your password"
-          required
           class="text-box"
           minlength="1"
           maxlength="5"
@@ -64,7 +61,6 @@
           name="confirmpassword"
           id="confirmpassword"
           placeholder="Enter your Confirm Password"
-          required
           class="text-box"
           minlength="1"
           maxlength="5"
@@ -73,5 +69,6 @@
       </div>
       <input type="submit" id="submit" class="submit-button" />
     </form>
+    <script src="./script/app.js"></script>
   </body>
 </html>

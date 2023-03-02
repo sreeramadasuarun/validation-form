@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
-
 :root {
   --cr--blue: blue;
   --cr--white: #ffffff;
-  --cr--red: rgb(232, 0, 0);
+  --cr--red: rgb(255, 92, 92);
   --cr--green: #37af65;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
@@ -28,7 +26,7 @@ a {
 }
 
 html {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 img {
@@ -44,8 +42,10 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url(../assets/images/5083499.jpg);
+  /* background-image: url(../assets/images/5083499.jpg); */
   /* background-image: url(../assets/images/5312742.jpg); */
+  /* background-image: url(../assets/images/d839742a057e1d111d0373fa614de906.jpg); */
+  background-image: url(../assets/images/red-mountains-morning-minimal-4k-dn.jpg);
   /* background-image: url(../assets/images/gradient-landscape-design-background_23-2149120069.avif); */
   background-size: cover;
 }
@@ -57,9 +57,9 @@ body {
   text-transform: uppercase;
 }
 
-.container {
+.form {
   width: 30rem;
-  background: rgba(0, 0, 0, 0.153);
+  background: rgba(0, 0, 0, 0.288);
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   padding: 2rem 3rem;
@@ -114,4 +114,13 @@ body {
 .error .error-message {
   visibility: visible;
   color: var(--cr--red);
+  /* text-shadow: 0px 0px 3px #000000; */
+}
+@media only screen and (max-width: 500px) {
+  body {
+    /* margin: 10rem 0rem; */
+  }
+  html {
+    font-size: 11px;
+  }
 }
