@@ -7,12 +7,6 @@ const usernameEl = document.getElementById("name");
 const emailEl = document.getElementById("email");
 const passwordEl = document.getElementById("password");
 const confirmPasswordEl = document.getElementById("confirmpassword");
-
-console.log(formEl);
-console.log(usernameEl);
-console.log(emailEl);
-console.log(passwordEl);
-console.log(confirmPasswordEl);
 //.....................................
 
 //Event listener
@@ -40,38 +34,29 @@ const setSuccessFor = (input) => {
 
 //onsubmit
 const submit = () => {
-  const usernamefiltered = usernameEl.value.trim();
-  const emailfiltered = emailEl.value.trim();
-  const passwordfiltered = passwordEl.value.trim();
-  const confirmpasswordfiltered = confirmPasswordEl.value.trim();
-
   //username
-  if (usernamefiltered === "") {
-    setErrorFor(usernameEl, "Username mandatory");
-  } else {
-    setSuccessFor(usernameEl);
-  }
+  usernameEl.value.trim()
+    ? usernameEl.length <= 4 || usernameEl.length >= 20
+      ? setSuccessFor(usernameEl)
+      : setErrorFor(usernameEl, "Username length in between 4 to 20")
+    : setErrorFor(usernameEl, "Username mandatory");
 
   //email
-  if (emailfiltered === "") {
-    setErrorFor(emailEl, "Email mandatory");
-  } else {
-    setSuccessFor(emailEl);
-  }
+  emailEl.value.trim()
+    ? setSuccessFor(emailEl)
+    : setErrorFor(emailEl, "Email mandatory");
 
   //password
-  if (passwordfiltered === "") {
-    setErrorFor(passwordEl, "Password mandatory");
-  } else {
-    setSuccessFor(passwordEl);
-  }
+  passwordEl.value.trim()
+    ? passwordEl.length <= 4 || passwordEl.length >= 20
+      ? setSuccessFor(passwordEl)
+      : setErrorFor(passwordEl, "Password length in between 4 to 20")
+    : setErrorFor(passwordEl, "Password mandatory");
+
   //confirm password
-  if (
-    confirmpasswordfiltered === "" ||
-    confirmpasswordfiltered !== passwordfiltered
-  ) {
-    setErrorFor(confirmPasswordEl, "Confirm Password mandatory");
-  } else {
-    setSuccessFor(confirmPasswordEl);
-  }
+  confirmPasswordEl.value.trim()
+    ? setSuccessFor(confirmPasswordEl) || confirmPasswordEl === passwordEl
+      ? setSuccessFor(confirmPasswordEl)
+      : setErrorFor(confirmPasswordEl, "password not matching")
+    : setErrorFor(confirmPasswordEl, "Confirm Password mandatory");
 };
