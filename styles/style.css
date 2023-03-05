@@ -68,16 +68,6 @@ body {
   gap: 1rem;
 }
 
-.submit-button {
-  border: none;
-  font-size: 1rem;
-  width: 100%;
-  padding: 0.75rem;
-  background: var(--cr--green);
-  color: white;
-  border-radius: 2px;
-  cursor: pointer;
-}
 .text-box {
   width: 100%;
   padding: 10px;
@@ -122,3 +112,45 @@ input:focus {
     font-size: 11px;
   }
 } */
+/* .submit-button {
+  border: none;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--cr--green);
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+} */
+.btn1 {
+  border: none;
+  padding: 10px 30px;
+  position: relative;
+  cursor: pointer;
+}
+.btn1::before {
+  transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.btn1.rounded1 {
+  border-radius: 50px;
+}
+.btn1.rounded1 .text-green1 {
+  font-weight: 900;
+  mix-blend-mode: luminosity;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+.btn1.rounded1::before {
+  border-radius: 50px;
+  width: 20%;
+  background: var(--cr--green);
+}
+.btn1.rounded1:hover::before {
+  background: #ffb462;
+  width: 100%;
+}
