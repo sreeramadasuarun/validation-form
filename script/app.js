@@ -54,7 +54,7 @@ const submit = () => {
   //password
   passwordfiltered
     ? passwordfiltered.length < 4 || passwordfiltered.length >= 5
-      ? setErrorFor(passwordEl, "Password length only on 4 ltters")
+      ? setErrorFor(passwordEl, "Password length only on 4 letters")
       : setSuccessFor(passwordEl)
     : setErrorFor(passwordEl, "Password mandatory");
 
