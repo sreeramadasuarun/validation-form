@@ -34,28 +34,34 @@ const setSuccessFor = (input) => {
 
 //onsubmit
 const submit = () => {
+  const usernamefiltered = usernameEl.value.trim(); //remove spaces on user value
+  const emailfiltered = emailEl.value.trim();
+  const passwordfiltered = passwordEl.value.trim();
+  const confirmPasswordfiltered = confirmPasswordEl.value.trim();
+
   //username
-  usernameEl.value.trim()
-    ? usernameEl.length <= 4 || usernameEl.length >= 20
-      ? setSuccessFor(usernameEl)
-      : setErrorFor(usernameEl, "Username length in between 4 to 20")
+  usernamefiltered
+    ? usernamefiltered.length < 4 || usernamefiltered.length > 15
+      ? setErrorFor(usernameEl, "Username length in between 4 to 15 letters")
+      : setSuccessFor(usernameEl)
     : setErrorFor(usernameEl, "Username mandatory");
 
   //email
-  emailEl.value.trim()
+  emailfiltered
     ? setSuccessFor(emailEl)
     : setErrorFor(emailEl, "Email mandatory");
 
   //password
-  passwordEl.value.trim()
-    ? passwordEl.length <= 4 || passwordEl.length >= 20
+  passwordfiltered
+    ? passwordfiltered.length <= 4 || passwordfiltered.length >= 20
       ? setSuccessFor(passwordEl)
       : setErrorFor(passwordEl, "Password length in between 4 to 20")
     : setErrorFor(passwordEl, "Password mandatory");
 
   //confirm password
-  confirmPasswordEl.value.trim()
-    ? setSuccessFor(confirmPasswordEl) || confirmPasswordEl === passwordEl
+  confirmPasswordfiltered
+    ? setSuccessFor(confirmPasswordEl) ||
+      confirmPasswordfiltered === passwordfiltered
       ? setSuccessFor(confirmPasswordEl)
       : setErrorFor(confirmPasswordEl, "password not matching")
     : setErrorFor(confirmPasswordEl, "Confirm Password mandatory");
